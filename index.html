@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¡Estás Invitado!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+
+    <!-- =========  Intro Section  ========= -->
+    <section class="section s-intro" id="intro">
+    <header>
+        <h1>¡Estás cordialmente invitado!</h1>
+        <h3 class="cursiva-elegante">A la celebración de mis</h3>
+        <h1>XV</h1>
+    </header>
+    <div class="info-cards">
+        <div class="card">
+        <h3><i class="fa-solid fa-calendar-day"></i> Fecha</h3>
+        <p><strong>20 de julio de 2025</strong></p>
+        <p>5:00 PM</p>
+        </div>
+        <!-- Card "Lugar" enlaza a mapa -->
+        <a href="#map-section" class="card-link">
+        <div class="card">
+            <h3><i class="fa-solid fa-location-dot"></i> Lugar</h3>
+            <p><strong>Calle XX #XX-XX</strong></p>
+            <p>Barranquilla, Colombia</p>
+        </div>
+        </a>
+    </div>
+    <div class="scroll-indicator"><i class="fa-solid fa-angles-down"></i></div>
+    </section>
+
+    <!-- =========  Countdown Section  ========= -->
+    <section class="section s-countdown" id="countdown-section">
+    <h2 class="cursiva-elegante">Falta para la fiesta</h2>
+    <div class="countdown-grid" id="countdown">
+    <div class="countdown-box"><h3 id="days">0</h3><p>Días</p></div>
+    <div class="countdown-box"><h3 id="hours">0</h3><p>Horas</p></div>
+    <div class="countdown-box"><h3 id="minutes">0</h3><p>Minutos</p></div>
+    <div class="countdown-box"><h3 id="seconds">0</h3><p>Segundos</p></div>
+</div>
+    </section>
+
+    <!-- =========  Gallery Section  ========= -->
+    <section class="section s-gallery" id="gallery-section">
+    <h2>Galería</h2>
+    <div class="gallery">
+        <img src="data/foto2.png" alt="Foto 1">
+        <img src="data/foto3.png" alt="Foto 2">
+        <img src="data/foto4.jpg" alt="Foto 3">
+        <img src="data/foto5.png" alt="Foto 4">
+    </div>
+    </section>
+
+    <!-- =========  Map Section  ========= -->
+    <section class="section s-map" id="map-section">
+    <h2><i class="fa-solid fa-map-location-dot"></i> Ubicación</h2>
+    <div id="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.3378994402988!2d-74.81520542485093!3d11.013254689150283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef42dbae06652dd%3A0x629e4371eac77d11!2sCentro%20Italiano%20de%20Barranquilla%20S.A!5e0!3m2!1ses!2sco!4v1750281991665!5m2!1ses!2sco" width="890" height="395" style="border:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    </section>
+
+    <!-- =========  RSVP Section  ========= -->
+    <section class="section s-rsvp" id="rsvp-section">
+    <h2><i class="fa-solid fa-ticket"></i> Confirma tu asistencia</h2>
+    <form onsubmit="handleRSVP(event)">
+        <input type="text" id="nombre" placeholder="Tu nombre" required />
+        <input type="email" id="correo" placeholder="Tu correo" required />
+        <button type="submit">Confirmar asistencia</button>
+    </form>
+    <p id="mensaje-confirmacion"></p>
+    </section>
+
+    <!-- =========  FAQ Section  ========= -->
+    <section class="section s-faq" id="faq-section">
+    <h2><i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes</h2>
+    <div class="faq-item" onclick="toggleFAQ(this)">
+        <strong>¿Cuál es el código de vestimenta?</strong>
+        <div class="faq-answer">
+        <p>Casual elegante. ¡Ven cómodo pero presentable para las fotos! <i class="fa-solid fa-camera"></i></p>
+        </div>
+    </div>
+    <div class="faq-item" onclick="toggleFAQ(this)">
+        <strong>¿Hay parqueaderos en el lugar?</strong>
+        <div class="faq-answer">
+        <p>Sí, hay parqueadero gratuito disponible en el lugar. <i class="fa-solid fa-car"></i></p>
+        </div>
+    </div>
+    <div class="faq-item" onclick="toggleFAQ(this)">
+        <strong>¿Hasta qué hora está reservado el lugar?</strong>
+        <div class="faq-answer">
+        <p>La celebración está reservada hasta las 11:00 PM. ¡Quédate a bailar! <i class="fa-solid fa-music"></i></p>
+        </div>
+    </div>
+    </section>
+
+    <script src="scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+    /* ======  Reset & Base  ======*/
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+        font-family:'Jost', sans-serif;
+        color:#5c3d21;
+        overflow-x:hidden;
+        scroll-snap-type:y mandatory;
+    }
+    a{color:inherit;text-decoration:none}
+
+    /* ======  Sections  ======*/
+    .section{
+        min-height:100vh;
+        padding:3rem 1rem;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        gap:1.5rem;
+        scroll-snap-align:start;
+        position:relative;
+    }
+    /* Paleta cálida para cada sección */
+    .s-intro{background:#fffaf0}
+    .s-countdown{
+        background: url('data/foto1.png') center center fixed;
+        background-size: cover;
+        color: #fff;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    }
+    .s-countdown::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.4);
+        z-index: 0;
+    }
+    .s-countdown > * {
+        position: relative;
+        z-index: 1;
+    }
+    .countdown-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+    .countdown-box {
+        padding: 1rem 1.5rem;
+        min-width: 100px;
+    }
+    .countdown-box h3 {
+        font-size: 2rem;
+        margin-bottom: .3rem;
+    }
+    .countdown-box p {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .s-gallery{background:#fffaf0}
+    .s-map{background:#fdfbf5bb}
+    .s-rsvp{background:#fffaf0}
+    .s-faq{background:#f9f2e8}
+
+    /* ======  Header Intro  ======*/
+    .cursiva-elegante{
+        font-family: 'Great Vibes', cursive;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    header h1{font-size:2.5rem;margin-bottom:.5rem}
+
+    /* ======  Info cards  ======*/
+    .info-cards{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center}
+    .card{
+        background:#ffffffcc;
+        backdrop-filter:blur(4px);
+        padding:1.5rem 2rem;
+        border-radius:12px;
+        width:260px;
+        box-shadow:0 6px 12px rgba(0,0,0,.08);
+        transition:transform .3s ease,box-shadow .3s ease;
+        position:relative;
+    }
+    .card:hover{transform:translateY(-6px);box-shadow:0 10px 18px rgba(0,0,0,.12)}
+    .card i{margin-right:.4rem}
+
+    /* make cards clickable */
+    .card-link{display:block}
+
+    /* ======  Countdown  ======*/
+    #countdown{font-size:1.7rem;font-weight:600}
+
+    /* ======  Gallery  ======*/
+    .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    }
+    .gallery img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+    transform: scale(1.05);
+    }
+
+    /* ======  Map  ======*/
+    #map{width:100%;max-width:900px;height:400px;border-radius:5px;box-shadow:0 4px 10px rgba(0,0,0,.1)}
+
+    /* ======  Form  ======*/
+    form{display:flex;flex-direction:column;gap:1rem;width:clamp(280px,90%,400px)}
+    input,button{padding:.7rem 1rem;font-size:1rem;border-radius:6px;border:1px solid #ccc}
+    button{background:#f0e68c;border:none;font-weight:600;cursor:pointer;transition:background .3s}
+    button:hover{background:#e0d070}
+
+    /* ======  FAQ  ======*/
+    .faq-item{background:#ffffffcc;backdrop-filter:blur(4px);border-radius:12px;padding:1rem 1.5rem;margin-bottom:1rem;cursor:pointer;position:relative;transition:transform .3s,box-shadow .3s}
+    .faq-item:hover{transform:translateY(-4px);box-shadow:0 8px 14px rgba(0,0,0,.08)}
+    .faq-item::after{content:'+';position:absolute;right:20px;top:22px;font-size:1.3rem;font-weight:bold;transition:transform .3s}
+    .faq-item.open::after{content:'-'}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease}
+    .faq-item.open .faq-answer{max-height:250px;margin-top:.8rem}
+
+    /* ======  Navigation hint  ======*/
+    .scroll-indicator{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);font-size:1.2rem;animation:bounce 2s infinite}
+    @keyframes bounce{0%,20%,50%,80%,100%{transform:translate(-50%,0)}40%{transform:translate(-50%,6px)}60%{transform:translate(-50%,3px)}}
