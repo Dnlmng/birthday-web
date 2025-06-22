@@ -1,5 +1,5 @@
 /* ===== Countdown ===== */
-    const eventDate = new Date("2025-07-20T17:00:00-05:00").getTime();
+    const eventDate = new Date("2025-09-13T19:00:00-05:00").getTime();
 function updateCountdown() {
     const now = Date.now();
     const dist = eventDate - now;
